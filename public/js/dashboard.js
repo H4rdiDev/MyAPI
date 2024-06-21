@@ -10,7 +10,7 @@
 
       var gradientFill = transactionsChartCanvas.createLinearGradient(0, 0, 0, 110);
       gradientFill.addColorStop(0, "rgba(255, 255, 255, 1)");
-      gradientFill.addColorStop(1, "rgba(243, 153, 21, .6)");
+      gradientFill.addColorStop(1, "rgba(243, 153, 21, 1.6)");
 
       var areaData = {
         labels: ["AA", "AB", "AC", "AD", "AE", "AF", "AG", "AH", "AI", "AJ", "AK", "AL"],

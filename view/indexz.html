@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>H4rdiAPIs</title>
+  <link rel="stylesheet" href="vendors/typicons/typicons.css">
+  <link rel="stylesheet" href="vendors/css/vendor.bundle.base.css">
+  <link rel="stylesheet" href="css/vertical-layout-light/style.css">
+  <link rel="stylesheet" href="https://unpkg.com/css.gg@2.1.1/icons/icons.css">
+  <link rel="shortcut icon" href="images/favicon.ico" />
+  <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+</head>
+<body onload="getvisitor();">
+  <div class="container-scroller">
+    <!-- partial:partials/_navbar.html -->
+    <nav class="navbar col-lg-20 col-12 p-0 fixed-top d-flex flex-row">
+      <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end">
+        <ul class="navbar-nav mr-lg-2">
+
+          <li class="nav-item dropdown">
+            <a class="nav-link count-indicator dropdown-toggle d-flex justify-content-center align-items-center" id="messageDropdown" href="#" data-toggle="dropdown">
+              <i class="typcn typcn-message mx-0"></i>
+              <span class="count"></span>
+            </a>
+            <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list" aria-labelledby="messageDropdown">
+              <p class="mb-0 font-weight-normal float-left dropdown-header">Messages</p>
+              <a class="dropdown-item preview-item">
+            <!-- Ini adalah chatbox -->
+              </a>
+            </div>
+          </li>
+          <li class="nav-item dropdown mr-0">
+            <a class="nav-link count-indicator dropdown-toggle d-flex align-items-center justify-content-center" id="notificationDropdown" href="#" data-toggle="dropdown">
+              <i class="typcn typcn-bell mx-0"></i>
+              <span class="count"></span>
+            </a>
+            <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list" aria-labelledby="notificationDropdown">
+              <p class="mb-0 font-weight-normal float-left dropdown-header">Notifications</p>
+            </div>
+          </li>
+        </ul>
+        <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="offcanvas">
+          <span class="typcn typcn-th-menu"></span>
+        </button>
+      </div>
+    </nav>
+    <!-- partial -->
+    <div class="container-fluid page-body-wrapper">
+      <!-- partial:partials/_settings-panel.html -->
+      <div class="theme-setting-wrapper">
+        <div id="settings-trigger"><i class="typcn typcn-cog-outline"></i></div>
+        <div id="theme-settings" class="settings-panel">
+          <i class="settings-close typcn typcn-times"></i>
+          <p class="settings-heading">SIDEBAR SKINS</p>
+          <div class="sidebar-bg-options selected" id="sidebar-light-theme"><div class="img-ss rounded-circle bg-light border mr-3"></div>Light</div>
+          <div class="sidebar-bg-options" id="sidebar-dark-theme"><div class="img-ss rounded-circle bg-dark border mr-3"></div>Dark</div>
+          <p class="settings-heading mt-2">HEADER SKINS</p>
+          <div class="color-tiles mx-0 px-4">
+            <div class="tiles success"></div>
+            <div class="tiles warning"></div>
+            <div class="tiles danger"></div>
+            <div class="tiles info"></div>
+            <div class="tiles dark"></div>
+            <div class="tiles default"></div>
+          </div>
+        </div>
+      </div>
+      <!-- partial -->
+      <!-- partial:partials/_sidebar.html -->
+      <nav class="sidebar sidebar-offcanvas" id="sidebar">
+        <ul class="nav">
+          
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="collapse" href="#ai-nya" aria-expanded="false" aria-controls="ai-nya">
+              <i class="typcn gg-smartphone-chip menu-icon"></i>
+              <span class="menu-title">Artificial Intelligence</span>
+              <i class="menu-arrow"></i>
+            </a>
+            <div class="collapse" id="ai-nya">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" href="api/ai/gpt3?text=halo ai&apikey=YOUR_KEY">GPT-3</a></li>
+                <li class="nav-item"> <a class="nav-link" href="api/ai/gpt4?text=halo ai&apikey=YOUR_KEY">GPT-4</a></li>
+                <li class="nav-item"> <a class="nav-link" href="api/ai/aoyo?text=halo ai&apikey=YOUR_KEY">Aoyo</a></li>
+                <li class="nav-item"> <a class="nav-link" href="api/ai/letmegpt?text=halo ai&apikey=YOUR_KEY">LetMeGPT</a></li>
+                <li class="nav-item"> <a class="nav-link" href="api/ai/leptonai?text=halo ai&apikey=YOUR_KEY">LeptonAi</a></li>
+                <li class="nav-item"> <a class="nav-link" href="api/ai/leptonai?text=halo ai&apikey=YOUR_KEY">ThinkAny</a></li>
+                <li class="nav-item"> <a class="nav-link" href="api/ai/simsimi?text=halo simi&language=id&apikey=YOUR_KEY">SimSimi</a></li>
+                <li class="nav-item"> <a class="nav-link" href="api/ai/llama?text=hal&prompt=&apikey=YOUR_KEY">Llama</a></li>
+                <li class="nav-item"> <a class="nav-link" href="api/ai/dalle?prompt=&apikey=YOUR_KEY">DALL-E</a></li>
+                <li class="nav-item"> <a class="nav-link" href="api/ai/text2anime?prompt=&apikey=YOUR_KEY">Text To Anime</a></li>
+                <li class="nav-item"> <a class="nav-link" href="api/ai/bingimg?prompt=&apikey=YOUR_KEY">Bing Image</a></li>
+              </ul>
+            </div>
+          </li>
+          <!--TOOLS-->
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="collapse" href="#tools-nya" aria-expanded="false" aria-controls="tools-nya">
+              <span class="menu-title">‎ ‎‎  </span>
+              <i class="typcn gg-code menu-icon"></i>
+              <span class="menu-title">‎ ‎Tools</span>
+              <i class="menu-arrow"></i>
+            </a>
+            <div class="collapse" id="tools-nya">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" href="api/tools/ocr?url=&apikey=YOUR_KEY">OCR</a></li>
+                <li class="nav-item"> <a class="nav-link" href="api/tools/upscale?url=https://telegra.ph/file/743770bf34b8a3ac134f0.jpg&apikey=YOUR_KEY">Upscale</a></li>
+                <li class="nav-item"> <a class="nav-link" href="api/tools/logo?prompt=pantai&apikey=YOUR_KEY">Logo</a></li>
+              </ul>
+            </div>
+          </li>
+          
+        </ul>
+      </nav>
+      <!-- partial -->
+      <div class="main-panel">
+        <div class="content-wrapper">
+
+         
+
+          <div class="row">
+            <div class="col-md-4 grid-margin stretch-card">
+              <div class="card">
+                <div class="card-body">
+                  <div class="d-flex align-items-center justify-content-between justify-content-md-center justify-content-xl-between flex-wrap mb-4">
+                    <div>
+                      <p class="mb-2 text-md-center text-lg-left">Ip Address</p>
+                      <h6 class="mb-0" id="ip">Loading...</h6>
+                    </div>
+                    <i class="typcn typcn-wi-fi icon-xl text-primary"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 grid-margin stretch-card">
+              <div class="card">
+                <div class="card-body">
+                  <div class="d-flex align-items-center justify-content-between justify-content-md-center justify-content-xl-between flex-wrap mb-4">
+                    <div>
+                      <p class="mb-2 text-md-center text-lg-left">Total Visitor</p>
+                      <h6 class="mb-0" id="visits">Loading...</h6>
+                    </div>
+                    <i class="typcn typcn-eye-outline icon-xl text-primary"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 grid-margin stretch-card">
+              <div class="card">
+                <div class="card-body">
+                  <div class="d-flex align-items-center justify-content-between justify-content-md-center justify-content-xl-between flex-wrap mb-4">
+                    <div>
+                      <p class="mb-2 text-md-center text-lg-left">Total Request</p>
+                      <h6 class="mb-0" id="requestCount">Loading...</h6>
+                    </div>
+                    <i class="typcn typcn-eye-outline icon-xl text-primary"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 grid-margin stretch-card">
+              <div class="card">
+                <div class="card-body">
+                  <div class="d-flex align-items-center justify-content-between justify-content-md-center justify-content-xl-between flex-wrap mb-4">
+                    <div>
+                      <p class="mb-2 text-md-center text-lg-left">Date</p>
+                      <h6 class="mb-0" id="tanggal">Loading..</h6>
+                    </div>
+                    <i class="typcn typcn-calendar-outline icon-xl text-primary"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 grid-margin stretch-card">
+              <div class="card">
+                <div class="card-body">
+                  <div class="d-flex align-items-center justify-content-between justify-content-md-center justify-content-xl-between flex-wrap mb-4">
+                    <div>
+                      <p class="mb-2 text-md-center text-lg-left">Time</p>
+                      <h6 class="mb-0" id="Clock">Loading...</h6>
+                    </div>
+                    <i class="typcn typcn-time icon-xl text-primary"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 grid-margin stretch-card">
+              <div class="card">
+                <div class="card-body">
+                  <div class="d-flex align-items-center justify-content-between justify-content-md-center justify-content-xl-between flex-wrap mb-4">
+                    <div>
+                      <p class="mb-2 text-md-center text-lg-left">Battery</p>
+                      <h6 class="mb-0" id="percentageLevel">Loading...</h6>
+                      <h6 class="mb-0" id="batteryLevel"></h6>
+                    </div>
+                    <i class="typcn typcn-battery-charge icon-xl text-primary"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            
+          </div>
+
+        </div>
+        <!-- content-wrapper ends -->
+        <!-- partial:partials/_footer.html -->
+        <footer class="footer">
+            <div class="card">
+                <div class="card-body">
+                    <div class="d-sm-flex justify-content-center justify-content-sm-between">
+                        <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Copyright © 2024 <a href="https://wa.me/6281378300839" class="text-muted" target="_blank">H4rdiDev</a></span>
+                    </div>
+                </div>    
+            </div>        
+        </footer>
+
+
+      </div>
+    </div>
+  </div>
+
+  <!-- base:js -->
+  <script src="vendors/js/vendor.bundle.base.js"></script>
+  <script src="vendors/chart.js/Chart.min.js"></script>
+  <script src="js/off-canvas.js"></script>
+  <script src="js/template.js"></script>
+  <script src="js/dashboard.js"></script>
+  <script src="js/000.js"></script>
+  <script src="js/001.js"></script>
+  <script src="js/002.js"></script>
+  <script src="js/004.js"></script>
+  <script src="js/005.js"></script>
+  <script src="js/006.js"></script>
+</body>
+
+</html>
+

@@ -1,417 +1,471 @@
+<!-- Hayo Ngapain?:v -->
+<!-- Credit Template By Farhan -->
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Rest Apis - H4rdiDev</title>
+    <link rel="stylesheet" href="vendors/mdi/css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="vendors/css/vendor.bundle.base.css">
+    <link rel="stylesheet" href="vendors/flag-icon-css/css/flag-icon.min.css">
+    <link rel="stylesheet" href="vendors/owl-carousel-2/owl.carousel.min.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css?family=Cantarell:bold|Droid+Serif:bold&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="vendors/owl-carousel-2/owl.theme.default.min.css">
+    <link rel="stylesheet" href="css/style.css">
+      <link rel="shortcut icon" href="images/favicon.ico" />
+      <link rel="stylesheet" href="ajax/libs/limonte-sweetalert2/7.33.1/sweetalert2.min.css">
+    <script src="ajax/libs/limonte-sweetalert2/7.33.1/sweetalert2.min.js"></script>
+   <meta name="description" content="Alphabot - API">
+   <meta property="og:image" content="https://telegra.ph/file/d257a15fa4b4f3b84b7e8.jpg">
+   <meta property="og:site_name" content="EKA PI">
+   <meta name="keywords" content="Rest Apis">
+   <meta name="author" content="H4rdiDev">
+  </head>
+  <body>
+     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            // Function to sort list items alphabetically
+            function sortListItems(selector) {
+                var $list = $(selector);
+                $list.find('li.nav-item').sort(function(a, b) {
+                    var textA = $(a).find('a.nav-link').text().toUpperCase();
+                    var textB = $(b).find('a.nav-link').text().toUpperCase();
+                    return (textA < textB) ? -1 : (textA > textB) ? 1 : 0;
+                }).appendTo($list);
+            }
 
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>DhaniOfficiall | Rest Api</title>
-  <link rel="stylesheet" href="vendors/typicons/typicons.css">
-  <link rel="stylesheet" href="vendors/css/vendor.bundle.base.css">
-  <link rel="stylesheet" href="css/vertical-layout-light/style.css">
-  <link rel="shortcut icon" href="images/favicon.png" />
-  <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
-</head>
-<body onload="getvisitor();">
-  <div class="row" id="proBanner">
-    <div class="col-12">
-      <span class="d-flex align-items-center purchase-popup">
-        <p>Join my group in order to get continuous updates about this rest api.</p>
-        <a href="https://chat.whatsapp.com/D7dW6tp7emp5piyJGRKWcH" target="_blank" class="btn download-button purchase-button ml-auto">Join Group</a>
-        <i class="typcn typcn-delete-outline" id="bannerClose"></i>
-      </span>
-    </div>
-  </div>
-  <div class="container-scroller">
-    <!-- partial:partials/_navbar.html -->
-    <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
-      <div class="navbar-brand-wrapper d-flex justify-content-center">
-        <div class="navbar-brand-inner-wrapper d-flex justify-content-between align-items-center w-100">
-
-        </div>
-      </div>
-      <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end">
-        <ul class="navbar-nav mr-lg-2">
-
-          <li class="nav-item dropdown">
-            <a class="nav-link count-indicator dropdown-toggle d-flex justify-content-center align-items-center" id="messageDropdown" href="#" data-toggle="dropdown">
-              <i class="typcn typcn-message mx-0"></i>
-              <span class="count"></span>
-            </a>
-            <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list" aria-labelledby="messageDropdown">
-              <p class="mb-0 font-weight-normal float-left dropdown-header">Messages</p>
-              <a class="dropdown-item preview-item">
-                <div class="preview-thumbnail">
-                    <img src="images/faces/face1.jpg" alt="image" class="profile-pic">
-                </div>
-                <div class="preview-item-content flex-grow">
-                  <h6 class="preview-subject ellipsis font-weight-normal">Firza bot
-                  </h6>
-                  <p class="font-weight-light small-text text-muted mb-0">
-                    Bagus bang rest api mu :v
-                  </p>
-                </div>
-              </a>
-              <a class="dropdown-item preview-item">
-                <div class="preview-thumbnail">
-                    <img src="images/faces/face2.jpg" alt="image" class="profile-pic">
-                </div>
-                <div class="preview-item-content flex-grow">
-                  <h6 class="preview-subject ellipsis font-weight-normal">Nisa bot
-                  </h6>
-                  <p class="font-weight-light small-text text-muted mb-0">
-                    Semangat ayang,<br/>kalau ada yg jual gk usah di lanjutin ❤️
-                  </p>
-                </div>
-              </a>
-              <a class="dropdown-item preview-item">
-                <div class="preview-thumbnail">
-                    <img src="images/faces/face3.jpg" alt="image" class="profile-pic">
-                </div>
-                <div class="preview-item-content flex-grow">
-                  <h6 class="preview-subject ellipsis font-weight-normal"> Zaki creator
-                  </h6>
-                  <p class="font-weight-light small-text text-muted mb-0">
-                    Semangat bang,<br/>walau script ini di anggap punya dia :v
-                  </p>
-                </div>
-              </a>
-            </div>
-          </li>
-          <li class="nav-item dropdown mr-0">
-            <a class="nav-link count-indicator dropdown-toggle d-flex align-items-center justify-content-center" id="notificationDropdown" href="#" data-toggle="dropdown">
-              <i class="typcn typcn-bell mx-0"></i>
-              <span class="count"></span>
-            </a>
-            <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list" aria-labelledby="notificationDropdown">
-              <p class="mb-0 font-weight-normal float-left dropdown-header">Notifications</p>
-              <a class="dropdown-item preview-item">
-                <div class="preview-thumbnail">
-                  <div class="preview-icon bg-success">
-                    <i class="typcn typcn-info mx-0"></i>
-                  </div>
-                </div>
-                <div class="preview-item-content">
-                  <h6 class="preview-subject font-weight-normal">Application Error</h6>
-                  <p class="font-weight-light small-text mb-0 text-muted">
-                    Just now
-                  </p>
-                </div>
-              </a>
-              <a class="dropdown-item preview-item">
-                <div class="preview-thumbnail">
-                  <div class="preview-icon bg-warning">
-                    <i class="typcn typcn-cog-outline mx-0"></i>
-                  </div>
-                </div>
-                <div class="preview-item-content">
-                  <h6 class="preview-subject font-weight-normal">Settings</h6>
-                  <p class="font-weight-light small-text mb-0 text-muted">
-                    Private message
-                  </p>
-                </div>
-              </a>
-              <a class="dropdown-item preview-item">
-                <div class="preview-thumbnail">
-                  <div class="preview-icon bg-info">
-                    <i class="typcn typcn-user mx-0"></i> 
-                  </div>
-                </div>
-                <div class="preview-item-content">
-                  <h6 class="preview-subject font-weight-normal">New user registration</h6>
-                  <p class="font-weight-light small-text mb-0 text-muted">
-                    2 days ago
-                  </p>
-                </div>
-              </a>
-            </div>
-          </li>
-        </ul>
-        <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="offcanvas">
-          <span class="typcn typcn-th-menu"></span>
-        </button>
-      </div>
-    </nav>
-    <!-- partial -->
-    <div class="container-fluid page-body-wrapper">
-      <!-- partial:partials/_settings-panel.html -->
-      <div class="theme-setting-wrapper">
-        <div id="settings-trigger"><i class="typcn typcn-cog-outline"></i></div>
-        <div id="theme-settings" class="settings-panel">
-          <i class="settings-close typcn typcn-times"></i>
-          <p class="settings-heading">SIDEBAR SKINS</p>
-          <div class="sidebar-bg-options selected" id="sidebar-light-theme"><div class="img-ss rounded-circle bg-light border mr-3"></div>Light</div>
-          <div class="sidebar-bg-options" id="sidebar-dark-theme"><div class="img-ss rounded-circle bg-dark border mr-3"></div>Dark</div>
-          <p class="settings-heading mt-2">HEADER SKINS</p>
-          <div class="color-tiles mx-0 px-4">
-            <div class="tiles success"></div>
-            <div class="tiles warning"></div>
-            <div class="tiles danger"></div>
-            <div class="tiles info"></div>
-            <div class="tiles dark"></div>
-            <div class="tiles default"></div>
-          </div>
-        </div>
-      </div>
-      <!-- partial -->
-      <!-- partial:partials/_sidebar.html -->
+            // Sort the AI list alphabetically on document ready
+            sortListItems('#ui-ai ul.nav.flex-column.sub-menu');
+        });
+    </script>
+      <style>
+        .menu-title {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        @media (max-width: 600px) {
+        .menu-title {
+                font-size: 14px;
+            }
+        }
+        @media (max-width: 400px) {
+            .menu-title {
+                font-size: 12px;
+            }
+        }
+        .mdi--wallet-bifold {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  --svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23000' d='M17 3H7C4.79 3 3 4.79 3 7v10c0 2.21 1.79 4 4 4h12c1.11 0 2-.89 2-2V9a2 2 0 0 0-2-2V5a2 2 0 0 0-2-2m0 2v2H7c-.73 0-1.41.2-2 .54V7c0-1.1.9-2 2-2m8.5 10.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5s1.5.67 1.5 1.5s-.67 1.5-1.5 1.5'/%3E%3C/svg%3E");
+  background-color: currentColor;
+  -webkit-mask-image: var(--svg);
+  mask-image: var(--svg);
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-size: 100% 100%;
+  mask-size: 100% 100%;
+        }
+        .mdi--bank-circle {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  --svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23000' d='M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10s10-4.5 10-10S17.5 2 12 2m5 15H7v-2h10zm-9-3v-3h2v3zm3 0v-3h2v3zm3 0v-3h2v3zm3-4H7V8.5L12 6l5 2.5z'/%3E%3C/svg%3E");
+  background-color: currentColor;
+  -webkit-mask-image: var(--svg);
+  mask-image: var(--svg);
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-size: 100% 100%;
+  mask-size: 100% 100%;
+        }
+        .mdi--search {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  --svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23000' d='M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5l-1.5 1.5l-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16A6.5 6.5 0 0 1 3 9.5A6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14S14 12 14 9.5S12 5 9.5 5'/%3E%3C/svg%3E");
+  background-color: currentColor;
+  -webkit-mask-image: var(--svg);
+  mask-image: var(--svg);
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-size: 100% 100%;
+  mask-size: 100% 100%;
+        }
+        .mdi--tools {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  --svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23000' d='m21.71 20.29l-1.42 1.42a1 1 0 0 1-1.41 0L7 9.85A3.8 3.8 0 0 1 6 10a4 4 0 0 1-3.78-5.3l2.54 2.54l.53-.53l1.42-1.42l.53-.53L4.7 2.22A4 4 0 0 1 10 6a3.8 3.8 0 0 1-.15 1l11.86 11.88a1 1 0 0 1 0 1.41M2.29 18.88a1 1 0 0 0 0 1.41l1.42 1.42a1 1 0 0 0 1.41 0l5.47-5.46l-2.83-2.83M20 2l-4 2v2l-2.17 2.17l2 2L18 8h2l2-4Z'/%3E%3C/svg%3E");
+  background-color: currentColor;
+  -webkit-mask-image: var(--svg);
+  mask-image: var(--svg);
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-size: 100% 100%;
+  mask-size: 100% 100%;
+      }
+    </style>
+  <body id="page-top" onload="getvisitor();">
+    <div class="container-scroller">
       <nav class="sidebar sidebar-offcanvas" id="sidebar">
-        <ul class="nav">
-          <li class="nav-item">
-            <a class="nav-link" href="index.html">
-              <i class="typcn typcn-device-desktop menu-icon"></i>
-              <span class="menu-title">Dashboard</span>
-              <div class="badge badge-danger">new</div>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" data-toggle="collapse" href="#downloader-nya" aria-expanded="false" aria-controls="downloader-nya">
-              <i class="typcn typcn-download menu-icon"></i>
-              <span class="menu-title">Downloader</span>
-              <i class="menu-arrow"></i>
-            </a>
-            <div class="collapse" id="downloader-nya">
-              <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="api/downloader/fbdl?url=&apikey=apikeynya">Facebook</a></li>
-                <li class="nav-item"> <a class="nav-link" href="api/downloader/tiktok?url=&apikey=apikeynya">Tiktok</a></li>
-                <li class="nav-item"> <a class="nav-link" href="api/downloader/ytplay?q=&apikey=apikeynya">Youtube Play</a></li>
-                <li class="nav-item"> <a class="nav-link" href="api/downloader/ytsearch?q=&apikey=apikeynya">Youtube Search</a></li>
-                <li class="nav-item"> <a class="nav-link" href="api/downloader/ytmp3?url=&apikey=apikeynya">Youtube Audio</a></li>
-                <li class="nav-item"> <a class="nav-link" href="api/downloader/ytmp4?url=&apikey=apikeynya">Youtube Video</a></li>
-              </ul>
-            </div>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" data-toggle="collapse" href="#islamic-nya" aria-expanded="false" aria-controls="islamic-nya">
-              <i class="typcn typcn-heart-half-outline menu-icon"></i>
-              <span class="menu-title">Islamic</span>
-              <i class="menu-arrow"></i>
-            </a>
-            <div class="collapse" id="islamic-nya">
-              <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="api/islamic/jadwalsholat?q=surabaya&apikey=apikeynya">Jadwal Sholat</a></li>
-                <li class="nav-item"> <a class="nav-link" href="api/islamic/kisahnabi?q=muhammad&apikey=apikeynya">Kisah Nabi</a></li>
-                <li class="nav-item"> <a class="nav-link" href="api/islamic/niatsholat?q=magrib&apikey=apikeynya">Niat Sholat</a></li>
-                <li class="nav-item"> <a class="nav-link" href="api/islamic/surah?surah=18&apikey=apikeynya">Surah</a></li>
-                <li class="nav-item"> <a class="nav-link" href="api/islamic/ayat?surah=18&ayat=1&apikey=apikeynya">Ayat</a></li>
-                <li class="nav-item"> <a class="nav-link" href="api/islamic/surah-audio?surah=18&apikey=apikeynya">Surah Audio</a></li>
-                <li class="nav-item"> <a class="nav-link" href="api/islamic/ayat-audio?surah=18&ayat=1&apikey=apikeynya">Ayat Audio</a></li>
-              </ul>
-            </div>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" data-toggle="collapse" href="#search-nya" aria-expanded="false" aria-controls="search-nya">
-              <i class="typcn typcn-zoom-outline menu-icon"></i>
-              <span class="menu-title">Search</span>
-              <i class="menu-arrow"></i>
-            </a>
-            <div class="collapse" id="search-nya">
-              <ul class="nav flex-column sub-menu">
-                <li class="nav-item"><a class="nav-link" href="api/search/cuaca?q=jakarta&apikey=apikeynya">Cuaca</a></li>
-                <li class="nav-item"><a class="nav-link" href="api/search/jadwaltv?q=gtv&apikey=apikeynya">Jadwal Televisi</a></li>
-                <li class="nav-item"><a class="nav-link" href="api/search/cekresi?q=&apikey=apikeynya">Cek Resi</a></li>
-                <li class="nav-item"><a class="nav-link" href="api/search/pinterest-video?url=&apikey=apikeynya">Pinterest Video</a></li>
-                <li class="nav-item"><a class="nav-link" href="api/search/brainly?q=&apikey=apikeynya">Brainly</a></li>
-              </ul>
-            </div>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" data-toggle="collapse" href="#maker-nya" aria-expanded="false" aria-controls="maker-nya">
-              <i class="typcn typcn-edit menu-icon"></i>
-              <span class="menu-title">Maker</span>
-              <i class="menu-arrow"></i>
-            </a>
-            <div class="collapse" id="maker-nya">
-              <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="api/maker/attp?q=turusek&apikey=apikeynya">Attp</a></li>
-                <li class="nav-item"> <a class="nav-link" href="api/maker/ttp?q=turusek&apikey=apikeynya">Ttp</a></li>
-                <li class="nav-item"> <a class="nav-link" href="api/maker/carbon?q=turusek&language=python&apikey=apikeynya">Carbon</a></li>
-                <li class="nav-item"> <a class="nav-link" href="api/maker/meme?q=turusek&apikey=apikeynya">Meme</a></li>
-                <li class="nav-item"> <a class="nav-link" href="api/maker/meme2?q=turusek&apikey=apikeynya">Meme 2</a></li>
-                <li class="nav-item"> <a class="nav-link" href="api/maker/meme3?q=turusek&apikey=apikeynya">Meme 3</a></li>
-                <li class="nav-item"> <a class="nav-link" href="api/maker/meme4?text1=turu&text2=sek&apikey=apikeynya">Meme 4</a></li>
-                <li class="nav-item"> <a class="nav-link" href="api/maker/meme5?text1=turu&text2=sek&apikey=apikeynya">Meme 5</a></li>
-                <li class="nav-item"> <a class="nav-link" href="api/maker/meme6?text1=turu&text2=sek&apikey=apikeynya">Meme 6</a></li>
-                <li class="nav-item"> <a class="nav-link" href="api/maker/meme7?text1=turu&text2=sek&text3=yo&apikey=apikeynya">Meme 7</a></li>
-                <li class="nav-item"> <a class="nav-link" href="api/maker/meme8?text1=turu&text2=sek&text3=yo&apikey=apikeynya">Meme 8</a></li>
-              </ul>
-            </div>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" data-toggle="collapse" href="#textpro-nya" aria-expanded="false" aria-controls="textpro-nya">
-              <i class="typcn typcn-brush menu-icon"></i>
-              <span class="menu-title">Textpro</span>
-              <i class="menu-arrow"></i>
-            </a>
-            <div class="collapse" id="textpro-nya">
-              <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="api/textpro/grunge?text=turusek&apikey=apikeynya">Grunge</a></li>
-                <li class="nav-item"> <a class="nav-link" href="api/textpro/typography?text=turusek&apikey=apikeynya">Typography</a></li>
-                <li class="nav-item"> <a class="nav-link" href="api/textpro/gradient-neon-light?text=turusek&apikey=apikeynya">Gradient Neon Light</a></li>
-                <li class="nav-item"> <a class="nav-link" href="api/textpro/white-gold?text=turusek&apikey=apikeynya">White Gold</a></li>
-                <li class="nav-item"> <a class="nav-link" href="api/textpro/light-glow-sliced?text=turusek&apikey=apikeynya">Light Glow Sliced</a></li>
-                <li class="nav-item"> <a class="nav-link" href="api/textpro/glowing-neon-light?text=turusek&apikey=apikeynya">Glowing Neon Light</a></li>
-                <li class="nav-item"> <a class="nav-link" href="api/textpro/deep-sea?text=turusek&apikey=apikeynya">Deep Sea</a></li>
-                <li class="nav-item"> <a class="nav-link" href="api/textpro/metallic?text=turusek&apikey=apikeynya">Metallic</a></li>
-                <li class="nav-item"> <a class="nav-link" href="api/textpro/transformer?text=turusek&apikey=apikeynya">Transformer</a></li>
-                <li class="nav-item"> <a class="nav-link" href="api/textpro/thunder?text=turusek&apikey=apikeynya">Thunder</a></li>
-                <li class="nav-item"> <a class="nav-link" href="api/textpro/thunder2?text=turusek&apikey=apikeynya">Thunder 2</a></li>
-                <li class="nav-item"> <a class="nav-link" href="api/textpro/neon-light-text?text=turusek&apikey=apikeynya">Meme 8</a></li>
-                <li class="nav-item"> <a class="nav-link" href="api/textpro/matrix?text=turusek&apikey=apikeynya">Matrix</a></li>
-                <li class="nav-item"> <a class="nav-link" href="api/textpro/neon-text?text=turusek&apikey=apikeynya">Neon Text</a></li>
-                <li class="nav-item"> <a class="nav-link" href="api/textpro/road-warning?text=turusek&apikey=apikeynya">Road Warning</a></li>
-                <li class="nav-item"> <a class="nav-link" href="api/textpro/bokeh?text=turusek&apikey=apikeynya">Bokeh</a></li>
-                <li class="nav-item"> <a class="nav-link" href="api/textpro/advanced-glow?text=turusek&apikey=apikeynya">Advanced Glow</a></li>
-                <li class="nav-item"> <a class="nav-link" href="api/textpro/break-wall?text=turusek&apikey=apikeynya">Break All</a></li>
-                <li class="nav-item"> <a class="nav-link" href="api/textpro/blackpink?text=turusek&apikey=apikeynya">Blackpink</a></li>
-                <li class="nav-item"> <a class="nav-link" href="api/textpro/blackpink2?text=turusek&apikey=apikeynya">Blackpink 2</a></li>
-                <li class="nav-item"> <a class="nav-link" href="api/textpro/blackpink3?text=turusek&apikey=apikeynya">Blackpink 3</a></li>
-                <li class="nav-item"> <a class="nav-link" href="api/textpro/blackpink4?text=turusek&apikey=apikeynya">Blackpink 4</a></li>
-                <li class="nav-item"> <a class="nav-link" href="api/textpro/blackpink5?text1=turu&text2=sek&apikey=apikeynya">Blackpink 5</a></li>
-                <li class="nav-item"> <a class="nav-link" href="api/textpro/glitch?text1=turu&text2=sek&apikey=apikeynya">Glitch</a></li>
-                <li class="nav-item"> <a class="nav-link" href="api/textpro/pornhub?text1=turu&text2=sek&apikey=apikeynya">Pornhub</a></li>
-                <li class="nav-item"> <a class="nav-link" href="api/textpro/marvel-studio?text1=turu&text2sek&apikey=apikeynya">Marvel Studio</a></li>
-                <li class="nav-item"> <a class="nav-link" href="api/textpro/marvel-studio2?text1=turu&text2=sek&apikey=apikeynya">Marvel Studio 2</a></li>
-                <li class="nav-item"> <a class="nav-link" href="api/textpro/avengers-logo?text1=turu&text2=sek&apikey=apikeynya">Avengers Logp</a></li>
-                <li class="nav-item"> <a class="nav-link" href="api/textpro/thor-logo?text1=turu&text2=sek&apikey=apikeynya">Thor Logo</a></li>
-              </ul>
-            </div>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" data-toggle="collapse" href="#photooxy-nya" aria-expanded="false" aria-controls="photooxy-nya">
-              <i class="typcn typcn-code menu-icon"></i>
-              <span class="menu-title">Photooxy</span>
-              <i class="menu-arrow"></i>
-            </a>
-            <div class="collapse" id="photooxy-nya">
-              <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="api/photooxy/dark-metal?text=turusek&apikey=apikeynya">Dark Metal</a></li>
-                <li class="nav-item"> <a class="nav-link" href="api/photooxy/white-stone?text=turusek&apikey=apikeynya">White Stone</a></li>
-                <li class="nav-item"> <a class="nav-link" href="api/photooxy/shadow?text=turusek&apikey=apikeynya">Shadow</a></li>
-                <li class="nav-item"> <a class="nav-link" href="api/photooxy/white-cube?text=turusek&apikey=apikeynya">White Cube</a></li>
-                <li class="nav-item"> <a class="nav-link" href="api/photooxy/gradient?text=turusek&apikey=apikeynya">Gradient</a></li>
-                <li class="nav-item"> <a class="nav-link" href="api/photooxy/fur-text?text=turusek&apikey=apikeynya">Fur Text</a></li>
-                <li class="nav-item"> <a class="nav-link" href="api/photooxy/flaming?text=turusek&apikey=apikeynya">Flaming</a></li>
-                <li class="nav-item"> <a class="nav-link" href="api/photooxy/scary-cemetery?text=turusek&apikey=apikeynya">Scary Cemetery</a></li>
-                <li class="nav-item"> <a class="nav-link" href="api/photooxy/harry-potter?text=turusek&apikey=apikeynya">Harry Potter</a></li>
-                <li class="nav-item"> <a class="nav-link" href="api/photooxy/3d-wood?text=turusek&apikey=apikeynya">3d Wood</a></li>
-                <li class="nav-item"> <a class="nav-link" href="api/photooxy/illuminated-metallic?text=turusek&apikey=apikeynya">Illuminated Metallic</a></li>
-                <li class="nav-item"> <a class="nav-link" href="api/photooxy/put-your?text=turusek&apikey=apikeynya">Put Your</a></li>
-                <li class="nav-item"> <a class="nav-link" href="api/photooxy/8-bit?text1=turu&text2=sek&apikey=apikeynya">8 Bit</a></li>
-              </ul>
-            </div>
-          </li>
-
-        </ul>
-      </nav>
-      <!-- partial -->
-      <div class="main-panel">
-        <div class="content-wrapper">
-
-         
-
-          <div class="row">
-            <div class="col-md-4 grid-margin stretch-card">
-              <div class="card">
-                <div class="card-body">
-                  <div class="d-flex align-items-center justify-content-between justify-content-md-center justify-content-xl-between flex-wrap mb-4">
-                    <div>
-                      <p class="mb-2 text-md-center text-lg-left">Ip Address</p>
-                      <h6 class="mb-0" id="ip">00</h6>
-                    </div>
-                    <i class="typcn typcn-wi-fi icon-xl text-primary"></i>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-4 grid-margin stretch-card">
-              <div class="card">
-                <div class="card-body">
-                  <div class="d-flex align-items-center justify-content-between justify-content-md-center justify-content-xl-between flex-wrap mb-4">
-                    <div>
-                      <p class="mb-2 text-md-center text-lg-left">Total Visitor</p>
-                      <h6 class="mb-0" id="visits">00</h6>
-                    </div>
-                    <i class="typcn typcn-eye-outline icon-xl text-primary"></i>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-4 grid-margin stretch-card">
-              <div class="card">
-                <div class="card-body">
-                  <div class="d-flex align-items-center justify-content-between justify-content-md-center justify-content-xl-between flex-wrap mb-4">
-                    <div>
-                      <p class="mb-2 text-md-center text-lg-left">Date</p>
-                      <h6 class="mb-0" id="tanggal">00</h6>
-                    </div>
-                    <i class="typcn typcn-calendar-outline icon-xl text-primary"></i>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-4 grid-margin stretch-card">
-              <div class="card">
-                <div class="card-body">
-                  <div class="d-flex align-items-center justify-content-between justify-content-md-center justify-content-xl-between flex-wrap mb-4">
-                    <div>
-                      <p class="mb-2 text-md-center text-lg-left">Time & Ucapan</p>
-                      <h6 class="mb-0" id="Clock">Loading...</h6>
-                      <h6 class="mb-0" id="Ucapan">Loading...</h6>
-                    </div>
-                    <i class="typcn typcn-time icon-xl text-primary"></i>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-4 grid-margin stretch-card">
-              <div class="card">
-                <div class="card-body">
-                  <div class="d-flex align-items-center justify-content-between justify-content-md-center justify-content-xl-between flex-wrap mb-4">
-                    <div>
-                      <p class="mb-2 text-md-center text-lg-left">Battery</p>
-                      <h6 class="mb-0" id="percentageLevel">Loading...</h6>
-                      <h6 class="mb-0" id="batteryLevel"></h6>
-                    </div>
-                    <i class="typcn typcn-battery-charge icon-xl text-primary"></i>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            
-          </div>
-
+        <div class="sidebar-brand-wrapper d-none d-lg-flex align-items-center justify-content-center fixed-top">
+          <a class="sidebar-brand brand-logo rounded-circle" href="#"><img src="https://telegra.ph/file/d257a15fa4b4f3b84b7e8.jpg" alt="logo" /></a>
+          <a class="sidebar-brand brand-logo-mini" href="#"><img src="https://telegra.ph/file/d257a15fa4b4f3b84b7e8.jpg" class="rounded-circle" alt="logo" /></a>
         </div>
-        <!-- content-wrapper ends -->
-        <!-- partial:partials/_footer.html -->
-        <footer class="footer">
-            <div class="card">
-                <div class="card-body">
-                    <div class="d-sm-flex justify-content-center justify-content-sm-between">
-                        <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Copyright © 2023 <a href="https://instagram.com/dhaniofficiall_/" class="text-muted" target="_blank">DhaniOfficiall</a></span>
+       <font face="Cantarell">
+        <ul class="nav">
+          <li class="nav-item profile">
+            <div class="profile-desc">
+              <div class="profile-pic">
+                <div class="count-indicator">
+                  <img class="img-xs rounded-circle " src="https://telegra.ph/file/d257a15fa4b4f3b84b7e8.jpg" alt="">
+                  <span class="count bg-success"></span>
+                </div>
+                <div class="profile-name">
+                  <h5 class="mb-0 font-weight-normal">Hardi</h5>
+                  <span>Jangan di hujat puh😾</span>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="nav-item nav-category">
+            <span class="nav-link">Docs APIs</span>
+          </li>
+          <li class="nav-item menu-items">
+          <a class="nav-link" data-toggle="collapse" href="#ui-ai" aria-expanded="false" aria-controls="ui-img-maker">
+          <span class="menu-icon">
+          <i class="mdi mdi-robot"></i>
+          </span>
+          <span class="menu-title">AI</span>
+          <i class="menu-arrow"></i>
+          </a>
+          <div class="collapse" id="ui-ai">
+          <ul class="nav flex-column sub-menu">
+          <li class="nav-item"> <a class="nav-link" href="api/ai/gpt3?query=halo ai&apikey=YOUR_KEY">GPT-3</a></li>
+          <li class="nav-item"> <a class="nav-link" href="api/ai/gpt4?query=halo ai&apikey=YOUR_KEY">GPT-4</a></li>
+          <li class="nav-item"> <a class="nav-link" href="api/ai/aoyo?query=halo ai&apikey=YOUR_KEY">Aoyo</a></li>
+          <li class="nav-item"> <a class="nav-link" href="api/ai/letmegpt?query=halo ai&apikey=YOUR_KEY">LetMeGPT</a></li>
+          <li class="nav-item"> <a class="nav-link" href="api/ai/leptonai?query=halo ai&apikey=YOUR_KEY">LeptonAi</a></li>
+          <li class="nav-item"> <a class="nav-link" href="api/ai/leptonai?query=halo ai&apikey=YOUR_KEY">ThinkAny</a></li>
+          <li class="nav-item"> <a class="nav-link" href="api/ai/simsimi?query=halo simi&language=id&apikey=YOUR_KEY">SimSimi</a></li>
+          <li class="nav-item"> <a class="nav-link" href="api/ai/llama?query=hal&prompt=&apikey=YOUR_KEY">Llama</a></li>
+          <li class="nav-item"> <a class="nav-link" href="api/ai/dalle?prompt=&apikey=YOUR_KEY">DALL-E</a></li>
+          <li class="nav-item"> <a class="nav-link" href="api/ai/text2anime?prompt=&apikey=YOUR_KEY">Text To Anime</a></li>
+          <li class="nav-item"> <a class="nav-link" href="api/ai/bingimg?prompt=&apikey=YOUR_KEY">Bing Image</a></li>
+          </ul>
+          </div>
+          </li>
+          <li class="nav-item menu-items">
+          <a class="nav-link" data-toggle="collapse" href="#ui-ppob" aria-expanded="false" aria-controls="ui-img-maker">
+          <span class="menu-icon">
+          <i class="mdi mdi--wallet-bifold"></i>
+          </span>
+          <span class="menu-title">PPOB</span>
+          <i class="menu-arrow"></i>
+          </a>
+          <div class="collapse" id="ui-ppob">
+          <ul class="nav flex-column sub-menu">
+          <li class="nav-item"> <a class="nav-link" href="api/ppob/cek-trx?code=&id=&apikey=YOUR_KEY">Check Transaksi</a></li>
+          <li class="nav-item"> <a class="nav-link" href="api/ppob/dana?number=081378300839&amount=10000&apikey=YOUR_KEY">TopUp DANA</a></li>
+          <li class="nav-item"> <a class="nav-link" href="api/ppob/ovo?number=081378300839&amount=10000&apikey=YOUR_KEY">Topup OVO</a></li>
+          </ul>
+          </div>
+          </li>
+          <li class="nav-item menu-items">
+          <a class="nav-link" data-toggle="collapse" href="#ui-saweria" aria-expanded="false" aria-controls="ui-img-maker">
+          <span class="menu-icon">
+          <i class="mdi mdi--bank-circle"></i>
+          </span>
+          <span class="menu-title">Saweria</span>
+          <i class="menu-arrow"></i>
+          </a>
+          <div class="collapse" id="ui-saweria">
+          <ul class="nav flex-column sub-menu">
+          <li class="nav-item"> <a class="nav-link" href="api/saweria/login?email=&password=&apikey=YOUR_KEY">Login Saweria</a></li>
+          <li class="nav-item"> <a class="nav-link" href="api/saweria/create-payment?email=&id=&name=&amount=&message=&apikey=YOUR_KEY">Create Payment</a></li>
+          </ul>
+          </div>
+          </li>
+          <li class="nav-item menu-items">
+          <a class="nav-link" data-toggle="collapse" href="#ui-search" aria-expanded="false" aria-controls="ui-img-maker">
+          <span class="menu-icon">
+          <i class="mdi--search"></i>
+          </span>
+          <span class="menu-title">Searching</span>
+          <i class="menu-arrow"></i>
+          </a>
+          <div class="collapse" id="ui-search">
+          <ul class="nav flex-column sub-menu">
+          <li class="nav-item"> <a class="nav-link" href="api/search/pinterest?query=&apikey=YOUR_KEY">Pinterest</a></li>
+          <li class="nav-item"> <a class="nav-link" href="api/search/pixiv?query=loli&apikey=YOUR_KEY">Pixiv</a></li>
+          <li class="nav-item"> <a class="nav-link" href="api/search/sticker?query=loli&apikey=YOUR_KEY">Sticker</a></li>
+          </ul>
+          </div>
+          </li>
+          <li class="nav-item menu-items">
+          <a class="nav-link" data-toggle="collapse" href="#ui-tools" aria-expanded="false" aria-controls="ui-img-maker">
+          <span class="menu-icon">
+          <i class="mdi--tools"></i>
+          </span>
+          <span class="menu-title">Tools</span>
+          <i class="menu-arrow"></i>
+          </a>
+          <div class="collapse" id="ui-tools">
+          <ul class="nav flex-column sub-menu">
+          <li class="nav-item"> <a class="nav-link" href="api/tools/ocr?url=&apikey=YOUR_KEY">OCR</a></li>
+          <li class="nav-item"> <a class="nav-link" href="api/tools/upscale?url=https://telegra.ph/file/743770bf34b8a3ac134f0.jpg&apikey=YOUR_KEY">Upscale</a></li>
+          <li class="nav-item"> <a class="nav-link" href="api/tools/logo?prompt=pantai&apikey=YOUR_KEY">Logo</a></li>
+          </ul>
+          </div>
+          </li>
+          <li class="nav-item nav-category">
+          <span class="nav-link">Contact Me</span>
+          </li>
+          <li class="nav-item menu-items">
+            <a class="nav-link" href="https://github.com/H4rdiDev">
+              <span class="menu-icon">
+                <i class="mdi mdi-github-circle"></i>
+              </span>
+              <span class="menu-title">Github</span>
+            </a>
+          </li>
+          <li class="nav-item menu-items">
+            <a class="nav-link" href="https://wa.me/6281378300839">
+              <span class="menu-icon">
+                <i class="mdi mdi-whatsapp"></i>
+              </span>
+              <span class="menu-title">WhatsApp</span>
+            </a>
+          </li>
+          <li class="nav-item menu-items">
+            <a class="nav-link" href="https://instagram.com/hardi.lah">
+              <span class="menu-icon">
+                <i class="mdi mdi-instagram"></i>
+              </span>
+              <span class="menu-title">Instagram</span>
+            </a>
+          </li>
+        </ul>
+       </font>
+      </nav>
+      <div class="container-fluid page-body-wrapper">
+        <nav class="navbar p-0 fixed-top d-flex flex-row">
+    <div class="navbar-brand-wrapper d-flex d-lg-none align-items-center justify-content-center">
+        <a class="navbar-brand brand-logo-mini" href="/">
+            <span class="favicon-text">Rest APIs - H4rdiDev</span>
+        </a>
+    </div>
+          <div class="navbar-menu-wrapper flex-grow d-flex align-items-stretch">
+            <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
+              <span class="mdi mdi-menu"></span>
+            </button>
+            <ul class="navbar-nav w-100">
+              <li class="nav-item w-100">
+                <form class="nav-link mt-2 mt-md-0 d-none d-lg-flex ">
+                  <input type="text" class="form-control" placeholder="Alphabot APIs">
+                </form>
+              </li>
+            </ul>
+            <ul class="navbar-nav navbar-nav-right">
+              <li class="nav-item nav-settings d-none d-lg-block">
+                <a class="nav-link" href="#">
+                  <i class="mdi mdi-view-grid"></i>
+                </a>
+              </li>
+              <li class="nav-item dropdown border-left">
+                <a class="nav-link count-indicator dropdown-toggle" id="notificationDropdown" href="#" data-toggle="dropdown">
+                  <i class="mdi mdi-bell"></i>
+                  <span class="count bg-danger"></span>
+                </a>
+                <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list" aria-labelledby="notificationDropdown">
+                  <h6 class="p-3 mb-0">Info New Update</h6>
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item preview-item">
+                    <div class="preview-thumbnail">
+                      <div class="preview-icon bg-dark rounded-circle">
+                        <i class="mdi mdi-calendar text-success"></i>
+                      </div>
                     </div>
-                </div>    
-            </div>        
-        </footer>
-
-
+                    <div class="preview-item-content">
+                      <p class="preview-subject mb-1">Change Template</p>
+                      <p class="text-muted ellipsis mb-0"> Cuman Minta Template doang bang :v </p>
+                    </div>
+                  </a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link" id="profileDropdown" href="#" data-toggle="dropdown">
+                  <div class="navbar-profile">
+                    <img class="img-xs rounded-circle" src="https://telegra.ph/file/d257a15fa4b4f3b84b7e8.jpg" alt="">
+                    <p class="mb-0 d-none d-sm-block navbar-profile-name">H4rdiDev</p>
+                  </div>
+                </a>
+              </li>
+            </ul>
+            <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="offcanvas">
+              <span class="mdi mdi-format-line-spacing"></span>
+            </button>
+          </div>
+        </nav>
+        <div class="main-panel">
+          <div class="content-wrapper">
+            <div class="row">
+              <div class="col-xl-3 col-sm-6 grid-margin stretch-card">
+                <div class="card">
+                  <div class="card-body">
+                    <h5 class="font-weight-bold text-danger text-uppercase">IP Address</h5>
+                    <div class="row">
+                      <div class="col-9">
+                        <div class="d-flex align-items-center align-self-start">
+                          <h3 class="mb-0" id="ip">Loading...</h3>
+                        </div>
+                      </div>
+                      <div class="col-3">
+                        <div class="icon icon-box-success">
+                          <span class="mdi mdi-ip-network icon-item"></span>
+                        </div>
+                      </div>
+                    </div>
+                    <font face="Cantarell" class="text-muted font-weight-normal">Your IP Address</font>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xl-3 col-sm-6 grid-margin stretch-card">
+                <div class="card">
+                  <div class="card-body">
+                    <h6 class="font-weight-bold text-info text-uppercase">Your Battery</h6>
+                    <div class="row">
+                      <div class="col-9">
+                        <div class="d-flex align-items-center align-self-start">
+                        	<span id="batteryLevel"></span>
+                          <h3 class="mb-0" id="percentageLevel">Loading...</h3>
+                        </div>
+                      </div>
+                      <div class="col-3">
+                        <div class="icon icon-box-success ">
+                          <span class="mdi mdi-battery-positive"></span>
+                        </div>
+                      </div>
+                    </div>
+                    <font face="Cantarell" class="text-muted font-weight-normal">Percentase Your Battery</font>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xl-3 col-sm-6 grid-margin stretch-card">
+                <div class="card">
+                  <div class="card-body">
+                    <h5 class="font-weight-bold text-success text-uppercase">Visitor</h5>
+                    <div class="row">
+                      <div class="col-9">
+                        <div class="d-flex align-items-center align-self-start">
+                          <h3 class="mb-0" id="visits">Loading...</h3>
+                        </div>
+                      </div>
+                      <div class="col-3">
+                        <div class="icon icon-box-success ">
+                          <span class="mdi mdi-eye icon-item"></span>
+                        </div>
+                      </div>
+                    </div>
+                    <font face="Cantarell" class="text-muted font-weight-normal">Visit Web</font>
+                  </div>
+                </div>
+              </div>
+            <div class="col-xl-3 col-sm-6 grid-margin stretch-card">
+                <div class="card">
+                  <div class="card-body">
+                    <h5 class="font-weight-bold text-info text-uppercase">Request</h5>
+                    <div class="row">
+                      <div class="col-9">
+                        <div class="d-flex align-items-center align-self-start">
+                          <h3 class="mb-0" id="requestCount">Loading...</h3>
+                        </div>
+                      </div>
+                      <div class="col-3">
+                        <div class="icon icon-box-success ">
+                          <span class="mdi mdi-merge icon-item"></span>
+                        </div>
+                      </div>
+                    </div>
+                    <font face="Cantarell" class="text-muted font-weight-normal">Request API</font>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xl-3 col-sm-6 grid-margin stretch-card">
+                <div class="card">
+                  <div class="card-body">
+                    <h5 class="font-weight-bold text-success text-uppercase">Clock</h5>
+                    <div class="row">
+                      <div class="col-9">
+                        <div class="d-flex align-items-center align-self-start">
+                          <h4 class="mb-0" id="Clock">Loading...</h4>
+                        </div>
+                      </div>
+                      <div class="col-3">
+                        <div class="icon icon-box-success ">
+                          <span class="mdi mdi-clock icon-item"></span>
+                        </div>
+                      </div>
+                    </div>
+                    <font face="Cantarell" class="text-muted font-weight-normal" id="Ucapan">Ucapan</font>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xl-3 col-sm-6 grid-margin stretch-card">
+                <div class="card">
+                  <div class="card-body">
+                    <h6 class="font-weight-bold text-info text-uppercase">Date</h6>
+                    <div class="row">
+                      <div class="col-9">
+                        <div class="d-flex align-items-center align-self-start">
+                          <h5 class="mb-0" id="tanggal">Loading...</h5>
+                        </div>
+                      </div>
+                      <div class="col-3">
+                        <div class="icon icon-box-success ">
+                          <span class="mdi mdi-calendar icon-item"></span>
+                        </div>
+                      </div>
+                    </div>
+                    <font face="Cantarell" class="text-muted font-weight-normal">Date Now</font>
+                  </div>
+                </div>
+              </div>
+            </div>
+<ins class="adsbygoogle" style="display:block" data-ad-format="fluid" data-ad-layout-key="-gw-3+1f-3d+2z" data-ad-client="ca-pub-5404310597803049" data-ad-slot="6657550061"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+          <footer class="footer">
+            <div class="d-sm-flex justify-content-center justify-content-sm-between">
+              <div class>
+                <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Copyright © 2024 <a href="https://wa.me/6281378300839" class="text-muted" target="_blank">H4rdiDev</a></span>
+              </div>
+            </div>
+          </footer>
+        </div>
       </div>
     </div>
-  </div>
-
-  <!-- base:js -->
-  <script src="vendors/js/vendor.bundle.base.js"></script>
-  <script src="vendors/chart.js/Chart.min.js"></script>
-  <script src="js/off-canvas.js"></script>
-  <script src="js/template.js"></script>
-  <script src="js/dashboard.js"></script>
-  <script src="js/000.js"></script>
-  <script src="js/001.js"></script>
-  <script src="js/002.js"></script>
-  <script src="js/003.js"></script>
-  <script src="js/004.js"></script>
-  <script src="js/005.js"></script>
-</body>
-
-</html>
-
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>   
+    <script src="vendors/js/vendor.bundle.base.js"></script>
+    <script src="vendors/owl-carousel-2/owl.carousel.min.js"></script>
+    <script src="js/off-canvas.js"></script>
+    <script src="js/hoverable-collapse.js"></script>
+    <script src="js/misc.js"></script>
+    <script src="js/settings.js"></script>
+    <script src="js/todolist.js"></script>
+    <script src="js/dashboard.js"></script>
+    <script src="js/ojan.js"></script>
+    <script src="js/000.js"></script>
+    <script src="js/001.js"></script>
+    <script src="js/002.js"></script>
+    <script src="js/004.js"></script>
+    <script src="js/005.js"></script>
+    <script src="js/006.js"></script>
+  </html>
