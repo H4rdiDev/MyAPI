@@ -2,24 +2,16 @@
   "name": "By-DhaniOfficiall",
   "version": "2.0.0",
   "description": "Created By DhaniOfficiall.",
-  "main": "node index.js",
+  "main": "index.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "node index.js",
+    "build": "npm install",
+    "vercel-build": "echo hello"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/BOTZ-DHANI/api-dhani-2023.git"
-  },
-  "keywords": [
-    "restapi",
-    "botwhatsapp"
-  ],
+  "keywords": [],
   "author": "DhaniOfficiall",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/BOTZ-DHANI/api-dhani-2023/issues"
+  "license": "ISC"
   },
-  "homepage": "https://github.com/BOTZ-DHANI/api-dhani-2023#readme",
   "dependencies": {
     "axios": "^0.27.2",
     "cheerio": "^1.0.0-rc.11",
