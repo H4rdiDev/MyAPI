@@ -1,11 +1,15 @@
 {
   "version": 2,
   "builds": [
-    { "src": "./index.js", "use": "@vercel/node" }
+    {
+      "src": "index.js", // Sesuaikan dengan file utama aplikasi Express.js Anda
+      "use": "@vercel/node" // Gunakan environment node untuk menjalankan aplikasi
+    }
   ],
   "routes": [
-    { "src": "/api/(.*)", "dest": "./routes/api.js" },
-    { "src": "/(.*)", "dest": "./routes/main.js" },
-    { "src": "/docs(.*)", "dest": "./routes/main.js" }
+    {
+      "src": "/(.*)",
+      "dest": "/index.js" // Routing semua request ke index.js (atau file utama Anda)
+    }
   ]
 }
